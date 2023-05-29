@@ -1931,6 +1931,28 @@
         });
       });
     </script>
+    	  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      if (window.history && window.history.pushState) {
+        $(window).on('popstate', function() {
+          var hashLocation = location.hash;
+          var hashSplit = hashLocation.split("#!/");
+          var hashName = hashSplit[1];
+
+          if (hashName !== '') {
+            var hash = window.location.hash;
+            if (hash === '') {
+              window.location = 'https://bangoostdigital.store/';
+              return false;
+            }
+          }
+        });
+
+        window.history.pushState('forward', null, './#forward');
+      }
+    });
+  </script>
   </body>
   <!-- Mirrored from redopedia.my.canva.site/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 May 2023 16:11:06 GMT -->
 </html>
